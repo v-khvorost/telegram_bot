@@ -1,13 +1,11 @@
-import configparser
-
-config_parser = configparser.ConfigParser()
-config_parser.read("config.ini")
-TOKEN = config_parser['default']['token']
-
+import os
+import requests
 from flask import Flask
 from flask import request
 from flask import Response
-import requests
+
+
+TOKEN = os.environ.get['TOKEN']
 
 app = Flask(__name__)
 
